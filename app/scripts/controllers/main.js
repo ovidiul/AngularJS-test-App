@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name angularJsApp.controller:MainCtrl
+ * @name tutorialWebApp.controller:BlogCtrl
  * @description
  * # MainCtrl
- * Controller of the angularJsApp
+ * Controller of the tutorialWebApp
  */
 
 angular.module('tutorialWebApp').controller('BlogCtrl', function (/* $scope, $location, $http */) {

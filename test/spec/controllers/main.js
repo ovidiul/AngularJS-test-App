@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: BlogCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('angularJsApp'));
+  beforeEach(module('tutorialWebApp'));
 
   var MainCtrl,
     scope;
@@ -11,7 +11,7 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    MainCtrl = $controller('BlogCtrl', {
       $scope: scope
     });
   }));

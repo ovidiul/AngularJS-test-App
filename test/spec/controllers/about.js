@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: PageCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('angularJsApp'));
+  beforeEach(module('tutorialWebApp'));
 
   var AboutCtrl,
     scope;
@@ -11,7 +11,7 @@ describe('Controller: AboutCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    AboutCtrl = $controller('PageCtrl', {
       $scope: scope
     });
   }));

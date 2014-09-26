@@ -21,35 +21,43 @@ var app = angular.module('tutorialWebApp', [
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
-    .when("/", {templateUrl: "views/home.html", controller: "PageCtrl"})
+    .when('/', {templateUrl: 'views/home.html', controller: 'PageCtrl'})
     // Pages
-    .when("/about", {templateUrl: "views/about.html", controller: "PageCtrl"})
-    .when("/faq", {templateUrl: "views/faq.html", controller: "PageCtrl"})
-    .when("/pricing", {templateUrl: "views/pricing.html", controller: "PageCtrl"})
-    .when("/services", {templateUrl: "views/services.html", controller: "PageCtrl"})
-    .when("/contact", {templateUrl: "views/contact.html", controller: "PageCtrl"})
+    .when('/about', {templateUrl: 'views/about.html', controller: 'PageCtrl'})
+    .when('/faq', {templateUrl: 'views/faq.html', controller: 'PageCtrl'})
+    .when('/pricing', {templateUrl: 'views/pricing.html', controller: 'PageCtrl'})
+    .when('/services', {templateUrl: 'views/services.html', controller: 'PageCtrl'})
+    .when('/contact', {templateUrl: 'views/contact.html', controller: 'PageCtrl'})
     // Blog
-    .when("/blog", {templateUrl: "views/blog.html", controller: "BlogCtrl"})
-    .when("/blog/post", {templateUrl: "views/blog_item.html", controller: "BlogCtrl"})
+    .when('/blog', {templateUrl: 'views/blog.html', controller: 'BlogCtrl'})
+    .when('/blog/post', {templateUrl: 'views/blog_item.html', controller: 'BlogCtrl'})
     // else 404
-    .otherwise("/404", {templateUrl: "views/404.html", controller: "PageCtrl"});
+    .otherwise('/404', {templateUrl: 'views/404.html', controller: 'PageCtrl'});
 }]);
 
-angular.module('tutorialWebApp').controller('RatingDemoCtrl', function ($scope) {
-  $scope.rate = 7;
-  $scope.max = 10;
-  $scope.isReadonly = false;
+angular.module('tutorialWebApp').controller('AccordionDemoCtrl', function ($scope) {
+  $scope.oneAtATime = true;
 
-  $scope.hoveringOver = function(value) {
-    $scope.overStar = value;
-    $scope.percent = 100 * (value / $scope.max);
+  $scope.groups = [
+    {
+      title: 'Dynamic Group Header - 1',
+      content: 'Dynamic Group Body - 1'
+    },
+    {
+      title: 'Dynamic Group Header - 2',
+      content: 'Dynamic Group Body - 2'
+    }
+  ];
+
+  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Item ' + newItemNo);
   };
 
-  $scope.ratingStates = [
-    {stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle'},
-    {stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'},
-    {stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle'},
-    {stateOn: 'glyphicon-heart'},
-    {stateOff: 'glyphicon-off'}
-  ];
+  $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
 });

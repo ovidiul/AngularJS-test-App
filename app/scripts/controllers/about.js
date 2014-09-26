@@ -2,21 +2,21 @@
 
 /**
  * @ngdoc function
- * @name angularJsApp.controller:AboutCtrl
+ * @name tutorialWebApp.controller:PageCtrl
  * @description
- * # AboutCtrl
- * Controller of the angularJsApp
+ * # PageCtrl
+ * Controller of the tutorialWebApp
  */
 angular.module('tutorialWebApp').controller('PageCtrl', function (/* $scope, $location, $http */) {
   console.log('Page Controller reporting for duty.');
 
   // Activates the Carousel
-  jQuery('.carousel').carousel({
+  $('.carousel').carousel({
     interval: 5000
   });
 
   // Activates Tooltips for Social Links
-  jQuery('.tooltip-social').tooltip({
-    selector: "a[data-toggle=tooltip]"
+  $('.tooltip-social').tooltip({
+    selector: 'a[data-toggle=tooltip]'
   });
 });
